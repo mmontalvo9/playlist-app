@@ -1,5 +1,5 @@
 # 🎵 Playlist App with YouTube Search  
-**Live site:** 👉 [playlist-app-8ggt.onrender.com](https://playlist-app-8ggt.onrender.com/)
+**Live site:** 👉 [https://playlist-app-8ggt.onrender.com](https://playlist-app-8ggt.onrender.com)
 
 This web app allows users to create and manage a custom music playlist — including YouTube video embedding, search functionality via the YouTube Data API, and CSV download support.
 
@@ -38,40 +38,30 @@ The core functionality of this app was adapted from a **CSII data structures pro
 ## ⚙️ Setup Instructions
 
 ### 🔧 Local Development
+
 1. Clone this repository  
 2. Install dependencies:
+
    ```bash
    pip install -r requirements.txt
-3. Run the app:
-```bash
+3. Run this app:
    python main.py
 
-4. Visit `http://localhost:5000` or your assigned port.
+4. Visit http://localhost:5000 or your assigned port.
 
----
+##🌐 Deployment Notes
+- The app is deployed on Render.
+- No database is used — the playlist is stored in memory and can be downloaded as a CSV.
+- API keys are stored securely in Render as environment variables and accessed dynamically via a backend route.
 
-### 🌐 Deployment Notes
-
-The app is deployed on [Render](https://render.com/).  
-No database is used — the playlist is stored in memory and can be downloaded as a CSV.
-
----
-
-### 🔐 API Key
-
+##🔐 API Key
 To use the YouTube search feature:
-
-- You must [create a free YouTube Data API key](https://console.cloud.google.com/)
-- Replace the placeholder key in `static/app.js`
-- Or store it as an environment variable in your deployment platform
-
-> **Note:** The API key is not included in this repository for security reasons.
-
----
+- You must create a free YouTube Data API key
+- Add it to your deployment platform as YOUTUBE_API_KEY
+- The frontend fetches it securely from a backend endpoint
+- Note: The API key is not exposed in this repository.
 
 ### 👤 Author
 
 Developed by **Marc Sebastian Montalvo**  
 Adapted from CSII coursework and enhanced into a full-stack project.
-
-   pip install -r requirements.txt
