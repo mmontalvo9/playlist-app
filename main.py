@@ -40,6 +40,13 @@ def download_csv():
     playlist.save_to_file(filename)
     return send_file(filename, as_attachment=True)
 
+import os
+
+@app.route('/apikey')
+def get_apikey():
+    return jsonify({'key': os.environ.get('YOUTUBE_API_KEY')})
+
+
 # ✅ Updated for Render compatibility
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
