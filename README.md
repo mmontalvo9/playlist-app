@@ -42,4 +42,3 @@ The core functionality of this app was adapted from a **CSII data structures pro
 2. Install dependencies:
    ```bash
    pip install -r requirements.txt
-ents.
