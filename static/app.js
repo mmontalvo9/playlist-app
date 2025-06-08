@@ -1,3 +1,5 @@
+const API_KEY = 'AIzaSyCUIZ2g28eYoDFsc6tHQX5dwl1n_sZagSA';
+
 async function addSong() {
   const title = document.getElementById('title').value;
   const artist = document.getElementById('artist').value;
@@ -35,6 +37,33 @@ function convertToEmbed(url) {
 
 async function downloadCSV() {
   window.location.href = '/download';
+}
+
+async function searchYouTube() {
+  const query = document.getElementById('search_query').value;
+  const res = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=3&q=${encodeURIComponent(query)}&videoEmbeddable=true&key=${API_KEY}`);
+  const data = await res.json();
+  const container = document.getElementById('search_results');
+  container.innerHTML = '';
+
+  data.items.forEach(video => {
+    const videoId = video.id.videoId;
+    const title = video.snippet.title;
+    const thumb = video.snippet.thumbnails.default.url;
+    const div = document.createElement('div');
+
+    div.innerHTML = `
+      <img src="${thumb}" />
+      <p>${title}</p>
+      <button onclick="useVideo('${videoId}')">Use this video</button>
+    `;
+    container.appendChild(div);
+  });
+}
+
+function useVideo(videoId) {
+  document.getElementById('youtube_url').value = `https://www.youtube.com/watch?v=${videoId}`;
+  document.getElementById('search_results').innerHTML = '';
 }
 
 loadSongs();
