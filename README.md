@@ -49,12 +49,12 @@ The core functionality of this app was adapted from a **CSII data structures pro
 
 4. Visit http://localhost:5000 or your assigned port.
 
-##🌐 Deployment Notes
+**###🌐 Deployment Notes**
 - The app is deployed on Render.
 - No database is used — the playlist is stored in memory and can be downloaded as a CSV.
 - API keys are stored securely in Render as environment variables and accessed dynamically via a backend route.
 
-##🔐 API Key
+**###🔐 API Key**
 To use the YouTube search feature:
 - You must create a free YouTube Data API key
 - Add it to your deployment platform as YOUTUBE_API_KEY
