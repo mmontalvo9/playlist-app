@@ -31,16 +31,35 @@
     iframe {
       margin-top: 10px;
     }
+    #search_results div {
+      background: #1c1c1c;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 8px;
+    }
+    #search_results img {
+      width: 120px;
+      height: auto;
+      display: block;
+      margin-bottom: 4px;
+    }
   </style>
 </head>
 <body>
-  <h1>🎵 Playlist App with YouTube</h1>
+  <h1>🎵 Playlist App with YouTube Search</h1>
   <input id="title" placeholder="Title">
   <input id="artist" placeholder="Artist">
   <input id="duration" placeholder="Duration (mm:ss)">
   <input id="youtube_url" placeholder="YouTube URL">
   <button onclick="addSong()">Add Song</button>
   <button onclick="downloadCSV()">Download CSV</button>
+
+  <br><br>
+  <input id="search_query" placeholder="Search YouTube for a song">
+  <button onclick="searchYouTube()">Search</button>
+  <div id="search_results"></div>
+
   <ul id="playlist"></ul>
 </body>
 </html>
+
