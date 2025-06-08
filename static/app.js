@@ -1,4 +1,4 @@
-const API_KEY = 'AIzaSyCUIZ2g28eYoDFsc6tHQX5dwl1n_sZagSA';
+const API_KEY = #API KEY HERE;
 
 async function addSong() {
   const title = document.getElementById('title').value;
