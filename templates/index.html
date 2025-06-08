@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Playlist App</title>
+  <script src="/static/app.js" defer></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: white;
+      padding: 20px;
+    }
+    input {
+      margin: 4px;
+      padding: 6px;
+    }
+    button {
+      margin: 4px;
+      padding: 6px 10px;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      background: #222;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+    }
+    iframe {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎵 Playlist App with YouTube</h1>
+  <input id="title" placeholder="Title">
+  <input id="artist" placeholder="Artist">
+  <input id="duration" placeholder="Duration (mm:ss)">
+  <input id="youtube_url" placeholder="YouTube URL">
+  <button onclick="addSong()">Add Song</button>
+  <button onclick="downloadCSV()">Download CSV</button>
+  <ul id="playlist"></ul>
+</body>
+</html>
