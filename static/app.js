@@ -53,7 +53,7 @@ async function searchYouTube() {
     const div = document.createElement('div');
 
     div.innerHTML = `
-      <img src="${thumb}" />
+      <img src="${thumb}" alt="${title}" />
       <p>${title}</p>
       <button onclick="useVideo('${videoId}')">Use this video</button>
     `;
@@ -62,8 +62,10 @@ async function searchYouTube() {
 }
 
 function useVideo(videoId) {
-  document.getElementById('youtube_url').value = `https://www.youtube.com/watch?v=${videoId}`;
+  const fullUrl = `https://www.youtube.com/watch?v=${videoId}`;
+  document.getElementById('youtube_url').value = fullUrl;
   document.getElementById('search_results').innerHTML = '';
 }
-
+  
 loadSongs();
+
