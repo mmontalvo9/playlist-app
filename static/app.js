@@ -1,4 +1,10 @@
-const API_KEY = #API KEY HERE;
+let API_KEY = '';
+
+async function fetchAPIKey() {
+  const res = await fetch('/apikey');
+  const data = await res.json();
+  API_KEY = data.key;
+}
 
 async function addSong() {
   const title = document.getElementById('title').value;
@@ -66,6 +72,9 @@ function useVideo(videoId) {
   document.getElementById('youtube_url').value = fullUrl;
   document.getElementById('search_results').innerHTML = '';
 }
-  
-loadSongs();
+
+// 🧠 Fetch API key, then load songs after it's ready
+fetchAPIKey().then(loadSongs);
+
+
 
