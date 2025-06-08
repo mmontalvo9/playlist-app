@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify, render_template, send_file
 from playlist import Playlist
+import os
 
 app = Flask(__name__)
 playlist = Playlist()
@@ -39,6 +40,7 @@ def download_csv():
     playlist.save_to_file(filename)
     return send_file(filename, as_attachment=True)
 
+# ✅ Updated for Render compatibility
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=81)
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
 
